@@ -1,7 +1,7 @@
-package br.com.schumaker.spring.controller;
+package br.com.schumaker.springboot.controller;
 
-import br.com.schumaker.spring.entity.Usuario;
-import br.com.schumaker.spring.service.UsuarioService;
+import br.com.schumaker.springboot.model.entity.Usuario;
+import br.com.schumaker.springboot.model.service.UsuarioService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

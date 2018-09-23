@@ -1,4 +1,4 @@
-package br.com.schumaker.spring.controller;
+package br.com.schumaker.springboot.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

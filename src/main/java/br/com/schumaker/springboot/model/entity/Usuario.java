@@ -1,4 +1,4 @@
-package br.com.schumaker.spring.entity;
+package br.com.schumaker.springboot.model.entity;
 
 import java.util.List;
 import org.springframework.data.annotation.Id;
@@ -17,6 +17,7 @@ public class Usuario {
     private String nome;
     private Integer idade;
     private String email;
+    private String senha;
     
     @DBRef
     private List<Perfil> perfis;
@@ -37,6 +38,35 @@ public class Usuario {
         this.nome = nome;
         this.idade = idade;
         this.email = email;
+    }
+    
+    public Usuario(String nome, String email, String senha) {
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+    }
+    
+    
+    public Usuario(String nome, Integer idade, String email, String senha) {
+        this.nome = nome;
+        this.idade = idade;
+        this.email = email;
+        this.senha = senha;
+    }
+
+    public Usuario(String nome, String email, String senha, List<Perfil> perfis) {
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.perfis = perfis;
+    }
+    
+    public Usuario(Usuario usuario){
+        this.nome   = usuario.getNome();
+        this.email  = usuario.getEmail();
+        this.senha  = usuario.getSenha();
+        this.idade  = usuario.getIdade();
+        this.perfis = usuario.getPerfis();
     }
 
     public String getId() {
@@ -71,6 +101,14 @@ public class Usuario {
         this.email = email;
     }
 
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+    
     public List<Perfil> getPerfis() {
         return perfis;
     }

@@ -1,7 +1,7 @@
-package br.com.schumaker.spring.service;
+package br.com.schumaker.springboot.model.service;
 
-import br.com.schumaker.spring.entity.Perfil;
-import br.com.schumaker.spring.repository.PerfilRepository;
+import br.com.schumaker.springboot.model.entity.Perfil;
+import br.com.schumaker.springboot.model.repository.PerfilRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

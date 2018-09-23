@@ -1,7 +1,7 @@
-package br.com.schumaker.spring.controller;
+package br.com.schumaker.springboot.controller;
 
-import br.com.schumaker.spring.entity.Perfil;
-import br.com.schumaker.spring.service.PerfilService;
+import br.com.schumaker.springboot.model.entity.Perfil;
+import br.com.schumaker.springboot.model.service.PerfilService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

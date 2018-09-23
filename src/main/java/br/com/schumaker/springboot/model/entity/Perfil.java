@@ -1,30 +1,35 @@
-package br.com.schumaker.spring.entity;
+package br.com.schumaker.springboot.model.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.security.core.GrantedAuthority;
 
 /**
  *
  * @author hudsonschumaker
  */
 @Document
-public class Perfil {
+public class Perfil implements GrantedAuthority{
     
     @Id
     private String id;
     private String nome;
     
-    public Perfil(){
-       
+    public Perfil(){ 
     }
 
-    public Perfil(String id) {
-        this.id = id;
+    public Perfil(String nome) {
+        this.nome = nome;
     }
-
+    
     public Perfil(String id, String nome) {
         this.id = id;
         this.nome = nome;
+    }
+    
+    @Override
+    public String getAuthority() {
+        return this.nome;
     }
     
     public String getId() {

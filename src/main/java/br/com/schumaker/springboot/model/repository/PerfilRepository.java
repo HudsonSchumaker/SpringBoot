@@ -1,6 +1,6 @@
-package br.com.schumaker.spring.repository;
+package br.com.schumaker.springboot.model.repository;
 
-import br.com.schumaker.spring.entity.Perfil;
+import br.com.schumaker.springboot.model.entity.Perfil;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -9,4 +9,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface PerfilRepository extends MongoRepository<Perfil, String>{
     
+    Perfil findByNome(String role);
 }
