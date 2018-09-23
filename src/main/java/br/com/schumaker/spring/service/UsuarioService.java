@@ -17,13 +17,24 @@ public class UsuarioService {
     
     @Autowired
     UsuarioRepository usuarioRepository;
+    
+    public Usuario getById(String id){
+        return usuarioRepository.findOne(id);
+    }
 
     public List<Usuario> listaUsuario() {      
         return usuarioRepository.findAll();
     }
 
-    public List<Usuario> listaUsuario(Usuario usuario) {
-        usuarioRepository.save(usuario);
-        return listaUsuario();
+    public Usuario salvarUsuario(Usuario usuario) {
+        return usuarioRepository.save(usuario);
+    }
+    
+    public void deleteUsuario(String id){
+        usuarioRepository.delete(id);
+    }
+    
+    public void deleteUsuario(Usuario usuario){
+        usuarioRepository.delete(usuario);
     }
 }
