@@ -1,6 +1,8 @@
 package br.com.schumaker.spring.entity;
 
+import java.util.List;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -15,6 +17,9 @@ public class Usuario {
     private String nome;
     private Integer idade;
     private String email;
+    
+    @DBRef
+    private List<Perfil> perfis;
 
     public Usuario() {
     }
@@ -66,6 +71,14 @@ public class Usuario {
         this.email = email;
     }
 
+    public List<Perfil> getPerfis() {
+        return perfis;
+    }
+
+    public void setPerfis(List<Perfil> perfis) {
+        this.perfis = perfis;
+    }
+    
     @Override
     public String toString() {
         return "Usuario{" + "id=" + id + ", nome=" + nome + ", idade=" + idade + ", email=" + email + '}';
