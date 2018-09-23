@@ -1,5 +1,6 @@
 package br.com.schumaker.spring.controller;
 
+import br.com.schumaker.spring.entity.Usuario;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,7 +19,7 @@ public class IndexController {
     }
     
     @RequestMapping(value = "/{nome}", method = RequestMethod.GET)
-    public String getText(@PathVariable String nome){
-        return "Olá " + nome;
+    public Usuario getText(@PathVariable String nome){
+        return new Usuario(nome);
     }
 }
