@@ -1,18 +1,24 @@
 package br.com.schumaker.spring.entity;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  *
  * @author hudsonschumaker
  */
+@Document
 public class Usuario {
     
+    @Id
+    private String id;
     private String nome;
     private Integer idade;
     private String email;
 
     public Usuario() {
     }
-
+    
     public Usuario(String nome) {
         this.nome = nome;
     }
@@ -28,6 +34,14 @@ public class Usuario {
         this.email = email;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -51,9 +65,9 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
     @Override
     public String toString() {
-        return "Usuario{" + "nome=" + nome + '}';
+        return "Usuario{" + "id=" + id + ", nome=" + nome + ", idade=" + idade + ", email=" + email + '}';
     }
 }
