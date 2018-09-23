@@ -1,11 +1,13 @@
 package br.com.schumaker.spring.service;
 
+import java.util.List;
 import br.com.schumaker.spring.entity.Usuario;
 import br.com.schumaker.spring.repository.UsuarioRepository;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.BiFunction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+
 import org.springframework.stereotype.Service;
 
 /**
@@ -21,11 +23,24 @@ public class UsuarioService {
     public Usuario getById(String id){
         return usuarioRepository.findOne(id);
     }
+    
+    public List<Usuario> buscarPorEmail(String email){
+        return usuarioRepository.findByEmailLikeIgnoreCase(email);
+    }
+    
+    public List<Usuario> buscarPorNome(String nome){
+        return usuarioRepository.findByNomeLikeIgnoreCase(nome);
+    }
 
     public List<Usuario> listaUsuario() {      
         return usuarioRepository.findAll();
     }
-
+    
+    public Page<Usuario> listaPaginada(int page, int count) { 
+        Pageable pages = new PageRequest(page, count);
+        return usuarioRepository.findAll(pages);
+    }
+    
     public Usuario salvarUsuario(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }

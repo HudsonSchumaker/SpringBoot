@@ -1,6 +1,7 @@
 package br.com.schumaker.spring.repository;
 
 import br.com.schumaker.spring.entity.Usuario;
+import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -9,4 +10,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface UsuarioRepository extends MongoRepository<Usuario, String>{
     
+    List<Usuario> findByNomeLikeIgnoreCase(String nome);
+    List<Usuario> findByEmailLikeIgnoreCase(String email);
+
 }
