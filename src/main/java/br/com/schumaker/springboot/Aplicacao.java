@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  *
- * @author hudsonschumaker
+ * @author hudson schumaker
  */
 @SpringBootApplication
 public class Aplicacao {
